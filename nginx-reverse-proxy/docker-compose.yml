@@ -1,0 +1,20 @@
+version: '3'
+services:  
+  proxy:
+    image: nginx:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./public:/srv/www/static
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - proxy_net
+      - proxy_net_web
+      - proxy_net_auth
+networks:
+  proxy_net:
+    external: true
+  proxy_net_web:
+    external: true
+  proxy_net_auth:
+    external: true

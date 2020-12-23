@@ -1,0 +1,35 @@
+version: '3'
+services:
+    auth_lb: 
+        image: haproxy
+        ports:
+            - "8002:8080"
+        volumes:
+            - ./app/config/haproxy:/usr/local/etc/haproxy
+        networks:
+            - proxy_net_auth
+
+    web_1:
+        build: .
+        volumes:
+            - .:/app
+        environment:
+            - PORT=3001
+    web_2:
+        build: .
+        volumes:
+            - .:/app
+        environment:
+            - PORT=3002
+    web_3:
+        build: .
+        volumes:
+            - .:/app
+        environment:
+            - PORT=3003
+    web_4:
+        build: .
+        volumes:
+            - .:/app
+        environment:
+            - PORT=3004
