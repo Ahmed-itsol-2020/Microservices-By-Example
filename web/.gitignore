@@ -6,7 +6,7 @@
 /out-tsc
 
 # Env variables and confs
-# .env
+/.env
 
 access.log
 
