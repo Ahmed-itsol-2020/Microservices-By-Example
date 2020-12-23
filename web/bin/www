@@ -10,7 +10,6 @@ var fs = require("fs");
 var http = require("http");
 var moment = require("moment");
 const mongoose = require("mongoose");
-const { connect_cache } = require("../app/cache/redis.service");
 /**
  * Get port from environment and store in Express.
  */
